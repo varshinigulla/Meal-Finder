@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="header">
+            <div id="home">
+                <img class="home" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnzsBhYSOY6d5DbaBcjqTW9GQHs1ci98-UVA&s" alt="home">
+                <h1 class="h1">MEAL FINDER</h1>
+            </div>
+            <div id="nav">
+                <i onclick=menudata() class="fa-solid fa-bars"></i>
+                <ul id="ul">
+                    <i onclick=hidedata() class="fa-regular fa-circle-xmark"></i>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div id="bg">
+        </div>
+        <div id="section1">
+            <div class="search">
+                <input class="search1" placeholder="Search recipes here ...">
+                <p class="search2"><i class="fa-solid fa-magnifying-glass"></i></p>
+            </div>
+            <p id="p">What are your favorite cuisinies?</p>
+            <pre>PERSONALIZE YOUR EXPERIENCE</pre>
+        </div>
+    </section>
+    <section id="cont">
+        <div>CATEGORIES</div><br><br>
+    </section>
+    <script src="./script.js"></script>
+</body>
