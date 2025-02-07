@@ -1,30 +1,32 @@
-let nav = document.getElementById("nav");
-let cont = document.getElementById("cont");
-let rendermeal = async () => {
-    let data  = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
-    let response = await data.json();
-
-    response.categories.forEach( meal =>{
-        let container = document.createElement("div");
-        container.classList.add("allmeals");
-        container.innerHTML = `
-        <img id="meal-thumb" src="${meal.strCategoryThumb}" alt="${meal.strCategory}">
-        <button id="meal-name">${meal.strCategory}</button>
+let menuBar = document.getElementById("menuBar");
+let allCategories = document.getElementById("allCategories");
+let rendercategory = async () => {
+    let mealData  = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+    let {categories} = await mealData.json();
+    
+    categories.map( meal =>{
+        let containerMeal = document.createElement("div");
+        containerMeal.classList.add("meals");
+        containerMeal.innerHTML += `
+        <img id="category-thumb" onclick=rendermeal(${meal.strCategory.toLowerCase()}) src="${meal.strCategoryThumb}" alt="${meal.strCategory}">
+        <button id="category-name">${meal.strCategory}</button>
         `
-        cont.appendChild(container);
-        let ul = document.getElementById("ul");
-        ul.innerHTML += `<li onclick=hidedata() id="menu-name">${meal.strCategory}</li><hr>`
-        nav.appendChild(ul);
+        allCategories.append(containerMeal);
+
+
+        let mealName = document.getElementById("mealName");
+        mealName.innerHTML += `<li onclick=hidedata(),rendermeal(${meal.strCategory.toLowerCase()}) id="menu-name">${meal.strCategory}</li><hr>`
+        menuBar.appendChild(mealName);
         });
 }
 
-rendermeal();
+rendercategory();
 
 function menudata(){
-    let ul = document.getElementById("ul");
-    ul.style.display = "block";
+    let mealName = document.getElementById("mealName");
+    mealName.style.display = "block";
 }
 function hidedata(){
-    let ul = document.getElementById("ul");
-    ul.style.display = "none";
+    let ul = document.getElementById("mealName");
+    mealName.style.display = "none";
 }

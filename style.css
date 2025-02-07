@@ -1,13 +1,13 @@
 body{
     margin:0px;
-    padding:0px;
+    padding: 0px;  
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* header*/
+/* Header section */
 
-#header{
+.header{
     background-color: rgb(218, 87, 11);
     height:100px;
     width:100%;
@@ -18,6 +18,9 @@ body{
     justify-content: space-between;
     z-index: 1;
 }
+
+/* Home section in header */
+
 #home{
     display:flex;
     flex-direction: row;
@@ -30,32 +33,30 @@ body{
     width:30px;
     border-radius: 7%;
 }
-.h1{
+#home h1{
     color:white;
     font-weight: 500;
     font-size: 2.1rem;
 }
 
-/*nav bar*/
+/* MenuBar section in header */
 
 .fa-bars{
     color:white;
     font-size: 30px;
     padding-right: 50px;
 }
-#ul{
+#mealName{
     width:250px;
     display: none;
     background-color: white;
-    margin-top: 470px;
+    margin-top: 625px;
     margin-right: 0px;
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 150px;
     display: none;
 }
-#menu-name{
-    list-style-type: none;
-}
-#ul hr{
+#mealName hr{
     background-color:whitesmoke;
     height:1px;
     border:none;
@@ -64,10 +65,12 @@ body{
     color:rgb(250, 98, 42);
     font-size: 1.2rem;
     padding-bottom: 20px;
-    padding-left: 200px;
+    padding-left: 220px;
 }
 
-/*section 1*/
+/* header section completed */
+
+/* Search Section */ 
 
 #bg{
     height:700px;
@@ -78,7 +81,7 @@ body{
     filter:brightness(40%);
     position:relative;
 }
-#section1{
+#search{
     position: absolute;
     bottom:250px;
     left:35%;
@@ -94,7 +97,7 @@ body{
     column-gap: 10px;
     margin-bottom: -25px;
 }
-.search1{
+.searchInput{
     height:47px;
     width:250px;
     border-radius: 30px;
@@ -106,11 +109,11 @@ body{
     margin-left:40px;
     padding-left: 30px;
 }
-.search1:focus{
+.searchInput :focus{
     outline: none;
     border:none;
 }
-.search2{
+#searchIcon{
     background-color: rgb(250, 98, 42);
     height:45px;
     width:45px;
@@ -123,41 +126,69 @@ body{
     padding: 12px;
     font-weight: 300px;
 }
-#p{
+.text{
     color: white;
     font-size: 2rem;
     font-weight: 500;
 }
-#section1 pre{
+#search pre{
     color: rgb(167, 165, 165);
     font-size: 1rem;
     margin-top: -10px;
 }
 
-/*section2*/
+/* search section completed */
 
-#cont{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:space-around;
-    flex-wrap: wrap;
-    background-color: rgb(201, 200, 200);
+/*All Meal Category Section */
+
+#allCategories{
+    background-color: whitesmoke;
+    margin-top: -175px;
+    padding-left: 5%;
+    padding-top: 1%;
 }
-.allmeals{
+.type{
+    display:block;
+}
+.type p{
+    margin-top:100px;
+    margin-left: -50px;
+    color:black;
+    font-size: 2.3rem;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.type hr{
+    margin-left: -48px;
+    margin-top: -25px;
+    padding-bottom: 20px;
+    background-color: whitesmoke;
+    height:5px;
+    border:none;
+    position: relative;
+}
+.type hr:before{
+    content:" ";
+    background: rgb(250, 98, 42);
+    height:5px;
+    width:10%;
+    position: absolute;
+}
+.meals{
     position:relative;
+    display:inline-block;
 }
-#meal-thumb{
+#category-thumb{
     height:120px;
     width:200px;
     padding: 20px 10px 10px;
     background-color: white;
     margin:10px;
 }
-#meal-name{
+#category-name{
     position: absolute;
     top:15px;
-    right:15px;
+    right:6%;
     background-color:rgb(250, 98, 42);
     border:none;
     color: white;
@@ -167,4 +198,7 @@ body{
     font-size: 0.85rem;
     font-weight: 500;
     font-family: monospace;
+    margin-right: 5px;
 }
+
+/* Meal Category section completed */ 
