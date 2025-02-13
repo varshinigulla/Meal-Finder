@@ -115,7 +115,7 @@ let fetchMeal = async (Category) => {
 
     getdescription(Category);
 
-    //fetching  meals data from api
+    //fetching meals data from api
 
     let data  = await fetch(`http://www.themealdb.com/api/json/v1/1/filter.php?c=${Category}`);
     let response = await data.json();
@@ -210,4 +210,76 @@ const fetchInstructions = (meal) => {
          instructions += `<p><i class="fa-regular fa-square-check" style="color: #fa7b05;"></i>${instructionsArray[i]}</p>`
     }
     return instructions;
+}
+
+//Getting the recipe datails of each meal
+
+let mealRecipe = document.getElementById("mealRecipe");
+
+const recipeDetails = async (id) => {
+
+    let allCategories = document.getElementById("allCategories");
+    allCategories.style.display = "block";
+    allCategories.style.marginTop = "-80px";
+
+    // displaying allmeals container as none
+    
+    let allmeals = document.getElementById("allmeals");
+    allmeals.style.display="none";
+
+    /*let allmeals = document.getElementById("allmeals");
+    allmeals.style.visibility="collapse";*/
+
+    // displaying mealRecipe container as block
+
+    let mealRecipe = document.getElementById("mealRecipe");
+    mealRecipe.style.display = "block";
+
+
+    let mealHome = document.getElementById("mealHome");
+    let detail = document.getElementById("detail");
+    let mealDetails = document.getElementById("mealDetails");
+
+    //fetching meals data from api
+
+    let data  = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    let response = await data.json();
+
+
+    mealHome.innerHTML = `<i class="fa-solid fa-house"></i><p> >> </p><h2>${response.meals[0].strMeal}</h2>`;
+
+    detail.innerHTML = `<h1>MEAL DETAILS</h1><hr>`;
+
+    mealDetails.innerHTML = `
+    <div class="mealImage">
+        <img src="${response.meals[0].strMealThumb}" alt="${response.meals[0].strMeal}">
+        <div class="mealContent">
+            <h1>${response.meals[0].strMeal}</h1><hr>
+            <p class="categoryName"> <strong> Category : </strong> ${response.meals[0].strCategory}</p>
+            <p class="sourceName"> <strong> Source : </strong> <a href="${response.meals[0].strSource}">${response.meals[0].strSource}</a> </p>
+            <div class="tags">
+                <strong> Tags : </strong> <ul>${fetchTags(response.meals[0].strTags)}</ul>
+            </div>
+            <div class="ingredients">
+                <p>Ingredients</p>
+                <ul>${fetchIngredients(response.meals[0])}</ul>
+            </div>
+        </div>
+    </div>
+    <div class="measure">
+        <h3>Measure:</h3>
+        <ul>${fetchMeasure(response.meals[0])}</ul>
+    </div>
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <ul>${fetchInstructions(response.meals[0].strInstructions)}</ul>
+    </div>
+    `;
+    
+    //appending the mealHome,detail and mealDetails to mealRecipe
+
+    mealRecipe.appendChild(mealHome);
+    mealRecipe.appendChild(detail);
+    mealRecipe.appendChild(mealDetails);
+
 }

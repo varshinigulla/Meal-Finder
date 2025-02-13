@@ -298,3 +298,197 @@ body{
     padding-left: 5px;
 }
 
+/* Styling  mealrecipe */
+
+#mealRecipe{
+    margin-top: -175px;
+    padding-top: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 75px;
+    background-color: whitesmoke;
+    position: relative;
+}
+
+/* Styling mealHome */
+
+#mealHome{
+    background-color: rgb(250, 98, 42);
+    height:50px;
+    width: 93%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:20px 25px 20px 20px;
+    column-gap: 15px;
+    position: absolute;
+    top:80px;
+}
+#mealHome i{
+    font-size: 1.5rem;
+    color: white;
+}
+#mealHome p{
+    color: white;
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: -6px;
+    font-family: monospace;
+}
+#mealHome h2{
+    text-transform: uppercase;
+    color: white;
+    font-weight: 400;
+}
+
+/* Styling detail */
+
+#detail{
+    margin-top: 120px;
+    margin-bottom: 30px;
+}
+#detail h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+#detail hr{
+    margin-top: -15px;
+    padding-bottom: 20px;
+    background-color: whitesmoke;
+    height:5px;
+    border:none;
+    position: relative;
+}
+#detail hr:before{
+    content:" ";
+    background: rgb(250, 98, 42);
+    height:5px;
+    width:6.5%;
+    position: absolute;
+}
+
+/* Styling mealDetails */
+
+#mealDetails{
+    background-color: white;
+    box-shadow: 0px 0px 5px gray;
+    border-radius: 2px;
+    padding-bottom: 40px;
+}
+.mealImage{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height:650px;
+    padding:50px 70px 20px;
+}
+.mealImage img{
+    height:100%;
+    width: 50%;
+    padding-right: 50px;
+}
+.mealContent{
+    width: 50%;
+    margin-top: -40px;
+}
+.mealContent h1{
+    color:rgb(247, 72, 3);
+    font-weight: 600;
+    font-size: 2rem;
+}
+.mealContent hr{
+    margin-top: -10px;
+    border:0.2px solid rgb(247, 105, 48);
+    width:100%;
+}
+.categoryName{
+    font-size: 1.3rem;
+    padding-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.sourceName{
+    font-size: 1.2rem;
+}
+.sourceName a{
+    text-decoration: none;
+    color:black;
+}
+.sourceName a:hover{
+    color:blue;
+}
+.tags ul{
+    display:flex;
+    flex-direction: row;
+    align-items: start;
+    column-gap: 15px;
+    margin-top: -40px;
+    margin-left: 20px;
+}
+.tags pre{
+    font-size: 1rem;
+    color:rgb(247, 105, 48);
+    background-color: white;
+    border:1px solid rgb(247, 105, 48);
+    padding:3px 15px;
+    border-radius: 3px;
+    font-weight: 500;
+}
+.ingredients{
+    background-color: rgb(236, 64, 2);
+    color:white;
+    padding:5px 25px 5px 10px;
+    margin-top: 15px;
+    width:90%;
+}
+.ingredients p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 20px;
+}
+.ingredients ul{
+    display:grid;
+    grid-template-columns: auto auto auto;
+}
+.ingredients pre{
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#number{
+    color:white;
+    background-color: seagreen;
+    font-size: 0.8rem;
+    font-weight: 200;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 50%;
+    border:1px solid white;
+    text-align: center;
+    align-content: center;
+    padding:2px 7px;
+
+}
+.measure{
+    padding-left:70px;
+}
+.measure ul{
+    width:92%;
+    background-color: whitesmoke;
+    border:1px solid rgb(253, 250, 250);
+    box-shadow: 0px 0px 3px gray;
+    display:grid;
+    grid-template-columns: auto auto;
+}
+.instructions{
+    padding: 5px 70px 20px;
+}
+.instructions h3{
+    padding-bottom: -150px;
+}
+.instructions ul{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 30px;
+}
+.instructions i{
+    margin-right: 15px;
+}
