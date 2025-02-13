@@ -9,7 +9,7 @@ body{
 
 /* Styling Header section */
 
-.header{
+#header{
     padding:0%;
     margin: 0%;
     background-color: rgb(218, 87, 11);
@@ -491,4 +491,47 @@ body{
 }
 .instructions i{
     margin-right: 15px;
+}
+
+/* Media Quiries */
+
+@media (min-width:769px) and (max-width:1024px){
+    #home{
+        padding-left:30px;
+        column-gap: 15px;
+    }
+    #home h1{
+        font-size: 2rem;
+    }
+    #mealName{
+        width:220px;
+        margin-top: 570px;
+        padding-bottom: 100px;
+    }
+    .fa-circle-xmark{
+        padding-left: 190px;
+    }
+    #search{
+        position: absolute;
+        top:230px;
+        left:27%;
+    }
+    .type p{
+        margin-top:50px;
+        margin-left: -20px;
+        font-size: 2.5rem;
+        font-family:monospace;
+        font-weight: 600;
+        letter-spacing: 7px;
+    }
+    .type hr{
+        margin-left: -18px;
+        margin-top: -30px;
+    }
+    .type hr:before{
+        width:12%;
+    }
+    .meals{
+        margin:10px;
+    }
 }

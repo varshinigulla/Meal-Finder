@@ -150,7 +150,7 @@ btn.addEventListener("click",()=>{
     let allmeals = document.getElementById("allmeals");
     allmeals.innerHTML="";
     let food = document.getElementById("searchInput").value.toLowerCase().trim();
-    rendermeal(food);
+    fetchMeal(food);
     document.getElementById("searchInput").value ='';
 });
 
