@@ -493,7 +493,7 @@ body{
     margin-right: 15px;
 }
 
-/* Media Quiries */
+/* Media Queries */
 
 @media (min-width:769px) and (max-width:1024px){
     #home{
