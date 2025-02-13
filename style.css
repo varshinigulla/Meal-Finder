@@ -10,7 +10,7 @@ body{
 /* Styling Header section */
 
 .header{
-    padding: 0%;
+    padding:0%;
     margin: 0%;
     background-color: rgb(218, 87, 11);
     height:100px;
@@ -223,3 +223,78 @@ body{
     font-family: monospace;
     margin-right: 5px;
 }
+
+/* Styling description section */
+
+.description{
+    width:96%;
+    border:1px solid red;
+    margin:50px 2px;
+    background-color: whitesmoke;
+    padding:15px 25px;
+}
+.description h3{
+    font-weight: 700px;
+    color:rgb(231, 68, 3);
+}
+.description p{
+    color:rgb(68, 67, 67);
+}
+.title{
+    margin-right:90%;
+    padding:0px;
+    letter-spacing: 10px;
+    font-weight: 600;
+}
+.title hr{
+    margin-top: -15px;
+    padding-bottom: 20px;
+    background-color: white;
+    height:5px;
+    border:none;
+    position: relative;
+}
+.title hr:before{
+    content:" ";
+    background: rgb(250, 98, 42);
+    height:5px;
+    width:75%;
+    position: absolute;
+}
+
+/* meals section */
+
+#allmeals{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    background-color: white;
+    margin-top: -175px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.mealData{
+    display:grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+.meal{
+    display:inline-block;
+    height:240px;
+    width:220px;
+    background-color:white;
+    margin:20px 10px 15px;   
+}
+#meal-thumb{
+    height:200px;
+    width:220px;
+}
+#meal-name{
+    font-size: 1rem;
+    font-weight: 500;
+    color:black;
+    margin-top: 2px;
+    padding-left: 5px;
+}
+
