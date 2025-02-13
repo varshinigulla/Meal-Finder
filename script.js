@@ -36,3 +36,17 @@ const fetchCategory = async () => {
 }
 
 fetchCategory();
+
+//function to display the data in menuBar
+
+function menudata(){
+    let mealName = document.getElementById("mealName");
+    mealName.style.display = "block";
+}
+
+//function to hide the data in menuBar
+
+function hidedata(){
+    let  mealName = document.getElementById("mealName");
+    mealName.style.display = "none";
+}
