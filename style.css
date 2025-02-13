@@ -1,3 +1,5 @@
+/* Styling body */
+
 body{
     margin:0px;
     padding: 0px;  
@@ -5,12 +7,14 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header section */
+/* Styling Header section */
 
 .header{
+    padding: 0%;
+    margin: 0%;
     background-color: rgb(218, 87, 11);
     height:100px;
-    width:100%;
+    width: 100%;
     position:absolute;
     display:flex;
     flex-direction: row;
@@ -19,7 +23,7 @@ body{
     z-index: 1;
 }
 
-/* Home section in header */
+/* Styling Home section in header */
 
 #home{
     display:flex;
@@ -39,7 +43,7 @@ body{
     font-size: 2.1rem;
 }
 
-/* MenuBar section in header */
+/* Styling MenuBar section in header */
 
 .fa-bars{
     color:white;
@@ -54,7 +58,13 @@ body{
     margin-right: 0px;
     padding-top: 40px;
     padding-bottom: 150px;
-    display: none;
+}
+#menu-name{
+    list-style-type: none;
+}
+#menu-name:hover{
+    color: rgb(250, 98, 42);
+    text-decoration-line: underline;
 }
 #mealName hr{
     background-color:whitesmoke;
@@ -65,12 +75,10 @@ body{
     color:rgb(250, 98, 42);
     font-size: 1.2rem;
     padding-bottom: 20px;
-    padding-left: 220px;
+    padding-left: 200px;
 }
 
-/* header section completed */
-
-/* Search Section */ 
+/* Styling Search Section */ 
 
 #bg{
     height:700px;
@@ -83,8 +91,8 @@ body{
 }
 #search{
     position: absolute;
-    bottom:250px;
-    left:35%;
+    top:230px;
+    left:30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,7 +105,7 @@ body{
     column-gap: 10px;
     margin-bottom: -25px;
 }
-.searchInput{
+#searchInput{
     height:47px;
     width:250px;
     border-radius: 30px;
@@ -109,7 +117,7 @@ body{
     margin-left:40px;
     padding-left: 30px;
 }
-.searchInput :focus{
+#searchInput:focus{
     outline: none;
     border:none;
 }
@@ -120,11 +128,18 @@ body{
     border-radius: 50%;
     border:1px solid White;
 }
+#searchIcon:hover{
+    background-color: white;
+    border:1px solid rgb(250, 98, 42);
+}
 .fa-magnifying-glass{
     color:white;
     font-size: 1.4rem;
     padding: 12px;
     font-weight: 300px;
+}
+.fa-magnifying-glass:hover{
+    color:rgb(250, 98, 42);
 }
 .text{
     color: white;
@@ -136,69 +151,3 @@ body{
     font-size: 1rem;
     margin-top: -10px;
 }
-
-/* search section completed */
-
-/*All Meal Category Section */
-
-#allCategories{
-    background-color: whitesmoke;
-    margin-top: -175px;
-    padding-left: 5%;
-    padding-top: 1%;
-}
-.type{
-    display:block;
-}
-.type p{
-    margin-top:100px;
-    margin-left: -50px;
-    color:black;
-    font-size: 2.3rem;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 600;
-}
-.type hr{
-    margin-left: -48px;
-    margin-top: -25px;
-    padding-bottom: 20px;
-    background-color: whitesmoke;
-    height:5px;
-    border:none;
-    position: relative;
-}
-.type hr:before{
-    content:" ";
-    background: rgb(250, 98, 42);
-    height:5px;
-    width:10%;
-    position: absolute;
-}
-.meals{
-    position:relative;
-    display:inline-block;
-}
-#category-thumb{
-    height:120px;
-    width:200px;
-    padding: 20px 10px 10px;
-    background-color: white;
-    margin:10px;
-}
-#category-name{
-    position: absolute;
-    top:15px;
-    right:6%;
-    background-color:rgb(250, 98, 42);
-    border:none;
-    color: white;
-    text-transform: uppercase;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    font-family: monospace;
-    margin-right: 5px;
-}
-
-/* Meal Category section completed */ 
