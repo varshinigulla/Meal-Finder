@@ -65,11 +65,12 @@ function hidedata(){
 let allmeals = document.getElementById("allmeals");
 
 const getdescription = async (Category) => {
+    
 
     //fetching categories data from api
-
+    
     let categoryData  = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
-    let response = await categoryData.json();
+    let {categories} = await categoryData.json();
 
     // displaying allCategories container as none
 
@@ -89,7 +90,7 @@ const getdescription = async (Category) => {
 
     //getting description data using filter method to categories data
 
-   const filteredCategory = response.categories.filter(meal => meal.strCategory.toLowerCase() === Category.toLowerCase());
+   const filteredCategory = categories.filter(meal => meal.strCategory.toLowerCase() === Category.toLowerCase());
    description.innerHTML = `
     <h3>${filteredCategory[0].strCategory}</h3>
     <p>${filteredCategory[0].strCategoryDescription}</p>
@@ -100,6 +101,7 @@ const getdescription = async (Category) => {
 
     allmeals.appendChild(description);
     allmeals.appendChild(title);
+
 }
 
 //fetching all the meals data
@@ -115,17 +117,20 @@ let fetchMeal = async (Category) => {
 
     getdescription(Category);
 
+    try {
+
     //fetching meals data from api
 
     let data  = await fetch(`http://www.themealdb.com/api/json/v1/1/filter.php?c=${Category}`);
-    let response = await data.json();
+    let {meals} = await data.json();
 
     let mealData = document.createElement("div");
     mealData.classList.add("mealData");
 
+
     //getting each meal data using filter method
 
-    response.meals.filter(meal =>{
+    meals.filter(meal =>{
         let container = document.createElement("div");
         container.classList.add("meal");
         container.innerHTML=`<h1>MEALS</h1>`
@@ -141,6 +146,13 @@ let fetchMeal = async (Category) => {
 
         });
 
+    } catch (error) {
+        let errorData = document.createElement("div");
+        errorData.classList.add("error");
+        errorData.innerHTML = `<h1>Fetching ${Category} meals..........</h1>`
+        allmeals.appendChild(errorData);
+    }
+
 }
 
 //giving input in search bar to get the meals data
@@ -154,6 +166,18 @@ btn.addEventListener("click",()=>{
     document.getElementById("searchInput").value ='';
 });
 
+//fetching the source of meal from meals data
+
+const fetchSource = (meal) => {
+    let source ="";
+    if(meal == ""){
+        source = `<span>Not Found</span>`;
+    }
+    else{
+        source = `<a href="${meal}">${meal}</a>`;
+    }
+    return source;
+}
 //fetching the tags data of meal from meals data
 
 const fetchTags = (meal) => {
@@ -227,9 +251,6 @@ const recipeDetails = async (id) => {
     let allmeals = document.getElementById("allmeals");
     allmeals.style.display="none";
 
-    /*let allmeals = document.getElementById("allmeals");
-    allmeals.style.visibility="collapse";*/
-
     // displaying mealRecipe container as block
 
     let mealRecipe = document.getElementById("mealRecipe");
@@ -242,37 +263,39 @@ const recipeDetails = async (id) => {
 
     //fetching meals data from api
 
+    
+
     let data  = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
-    let response = await data.json();
+    let {meals} = await data.json();
 
 
-    mealHome.innerHTML = `<i class="fa-solid fa-house"></i><p> >> </p><h2>${response.meals[0].strMeal}</h2>`;
+    mealHome.innerHTML = `<i class="fa-solid fa-house"></i><p> >> </p><h2>${meals[0].strMeal}</h2>`;
 
     detail.innerHTML = `<h1>MEAL DETAILS</h1><hr>`;
 
     mealDetails.innerHTML = `
     <div class="mealImage">
-        <img src="${response.meals[0].strMealThumb}" alt="${response.meals[0].strMeal}">
+        <img src="${meals[0].strMealThumb}" alt="${meals[0].strMeal}">
         <div class="mealContent">
-            <h1>${response.meals[0].strMeal}</h1><hr>
-            <p class="categoryName"> <strong> Category : </strong> ${response.meals[0].strCategory}</p>
-            <p class="sourceName"> <strong> Source : </strong> <a href="${response.meals[0].strSource}">${response.meals[0].strSource}</a> </p>
+            <h1>${meals[0].strMeal}</h1><hr>
+            <p class="categoryName"> <strong> Category : </strong> ${meals[0].strCategory}</p>
+            <p class="sourceName"> <strong> Source : </strong> ${fetchSource(meals[0].strSource)} </p>
             <div class="tags">
-                <strong> Tags : </strong> <ul>${fetchTags(response.meals[0].strTags)}</ul>
+                <strong> Tags : </strong> <ul>${fetchTags(meals[0].strTags)}</ul>
             </div>
             <div class="ingredients">
                 <p>Ingredients</p>
-                <ul>${fetchIngredients(response.meals[0])}</ul>
+                <ul>${fetchIngredients(meals[0])}</ul>
             </div>
         </div>
     </div>
     <div class="measure">
         <h3>Measure:</h3>
-        <ul>${fetchMeasure(response.meals[0])}</ul>
+        <ul>${fetchMeasure(meals[0])}</ul>
     </div>
     <div class="instructions">
         <h3>Instructions:</h3>
-        <ul>${fetchInstructions(response.meals[0].strInstructions)}</ul>
+        <ul>${fetchInstructions(meals[0].strInstructions)}</ul>
     </div>
     `;
     
@@ -281,5 +304,6 @@ const recipeDetails = async (id) => {
     mealRecipe.appendChild(mealHome);
     mealRecipe.appendChild(detail);
     mealRecipe.appendChild(mealDetails);
+
 
 }

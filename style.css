@@ -274,6 +274,7 @@ body{
     margin-top: -175px;
     margin-left: 50px;
     margin-right: 50px;
+    position: relative;
 }
 .mealData{
     display:grid;
@@ -296,6 +297,17 @@ body{
     color:black;
     margin-top: 2px;
     padding-left: 5px;
+}
+.error h1{
+    color:rgb(247, 74, 11);
+    position: absolute;
+    top:330px;
+    left:30%;
+    font-size: 2rem;
+    font-family: monospace;
+    padding-bottom: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 /* Styling  mealrecipe */
@@ -411,9 +423,13 @@ body{
 .sourceName{
     font-size: 1.2rem;
 }
+.sourceName span{
+    margin-left: 20px;
+}
 .sourceName a{
     text-decoration: none;
     color:black;
+    font-size: 1rem;
 }
 .sourceName a:hover{
     color:blue;
@@ -503,35 +519,46 @@ body{
     #home h1{
         font-size: 2rem;
     }
+    .fa-bars{
+        padding-right: 80px;
+    }
     #mealName{
-        width:220px;
+        width:200px;
         margin-top: 570px;
-        padding-bottom: 100px;
+        padding-bottom: 80px;
     }
     .fa-circle-xmark{
-        padding-left: 190px;
+        padding-left: 160px;
     }
     #search{
         position: absolute;
-        top:230px;
-        left:27%;
+        top:220px;
+        left:25%;
     }
-    .type p{
-        margin-top:50px;
-        margin-left: -20px;
-        font-size: 2.5rem;
-        font-family:monospace;
-        font-weight: 600;
-        letter-spacing: 7px;
+    #allCategories{
+        padding-left: 5.5%;
     }
     .type hr{
-        margin-left: -18px;
+        margin-left: -3%;
         margin-top: -30px;
     }
     .type hr:before{
-        width:12%;
+        width:13%;
     }
     .meals{
-        margin:10px;
+        margin:30px;
+    }
+    .mealData{
+        display:grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    .meal{
+        height:220px;
+        width:190px;
+        margin:20px 10px 25px;   
+    }
+    #meal-thumb{
+        height:190px;
+        width:190px;
     }
 }
