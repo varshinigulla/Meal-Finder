@@ -258,7 +258,7 @@ body{
     content:" ";
     background: rgb(250, 98, 42);
     height:5px;
-    width:75%;
+    width:85%;
     position: absolute;
 }
 
@@ -301,7 +301,7 @@ body{
 .error h1{
     color:rgb(247, 74, 11);
     position: absolute;
-    top:330px;
+    top:350px;
     left:30%;
     font-size: 2rem;
     font-family: monospace;
@@ -438,9 +438,9 @@ body{
     display:flex;
     flex-direction: row;
     align-items: start;
-    column-gap: 15px;
+    column-gap: 10px;
     margin-top: -40px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .tags pre{
     font-size: 1rem;
@@ -466,10 +466,12 @@ body{
 .ingredients ul{
     display:grid;
     grid-template-columns: auto auto auto;
+    margin-top: -5px;
 }
 .ingredients pre{
     font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 5px;
 }
 #number{
     color:white;
@@ -494,6 +496,14 @@ body{
     box-shadow: 0px 0px 3px gray;
     display:grid;
     grid-template-columns: auto auto;
+    padding-top:20px;
+    padding-bottom: 30px;
+}
+.measure p{
+    margin-bottom: 5px;
+}
+.measure i{
+    padding-right: 10px;
 }
 .instructions{
     padding: 5px 70px 20px;
@@ -503,7 +513,7 @@ body{
 }
 .instructions ul{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 30px;
+    line-height: 1.8rem;
 }
 .instructions i{
     margin-right: 15px;
@@ -543,7 +553,13 @@ body{
         margin-top: -30px;
     }
     .type hr:before{
-        width:13%;
+        width:14%;
+    }
+    .description{
+        width:94%;
+    }
+    .title hr:before{
+        width:98%;
     }
     .meals{
         margin:30px;
@@ -560,5 +576,59 @@ body{
     #meal-thumb{
         height:190px;
         width:190px;
+    }
+    .error h1{
+        top:400px;
+        left:25%;
+    }
+    #mealHome{
+        width: 90%;
+    }
+    .mealContent h1{
+        font-size: 1.7rem;
+    }
+    .mealContent hr{
+        margin-top: -12px;
+        border:0.2px solid rgb(247, 105, 48);
+        width:100%;
+    }
+    .categoryName{
+        font-size: 1.1rem;
+        padding-top: 0px;
+    }
+    .sourceName a{
+        font-size: 0.85rem;
+    }
+    .tags ul{
+        column-gap: 5px;
+    }
+    .tags pre{
+        font-size: 0.75rem;
+        padding:5px 10px;
+        margin-top: 20px;
+    }
+    .ingredients{
+        padding:5px 25px 5px 5px;
+        margin-top: 10px;
+    }
+    .ingredients p{
+        font-size: 1.3rem;
+        font-weight:600;
+        padding-left: 15px;
+    }
+    .ingredients ul{
+        display:grid;
+        grid-template-columns: auto auto auto;
+        margin-left: -28px;
+        margin-top: -5px;
+    }
+    .ingredients pre{
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+        margin-left: 10px;
+    }
+    #number{
+        font-size: 0.75rem;
+        padding:2px 5px;
     }
 }

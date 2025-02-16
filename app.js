@@ -219,7 +219,7 @@ const fetchMeasure = (meal) => {
         }
         else{
             const ingredient = meal[`strIngredient${i}`];
-            measurelist += `<p><i class="fa-solid fa-spoon" style="color: #fb7304;"></i>${measure} ${ingredient}</p>`;
+            measurelist += `<p><i class="fa-solid fa-spoon" style="color: #fb7304;"></i>    ${measure} ${ingredient}</p>`;
         }
     }
     return measurelist;
