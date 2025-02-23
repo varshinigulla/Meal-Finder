@@ -465,7 +465,7 @@ body{
 }
 .ingredients ul{
     display:grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3,1fr);
     margin-top: -5px;
 }
 .ingredients pre{
@@ -495,7 +495,7 @@ body{
     border:1px solid rgb(253, 250, 250);
     box-shadow: 0px 0px 3px gray;
     display:grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2,1fr);
     padding-top:20px;
     padding-bottom: 30px;
 }
@@ -566,7 +566,7 @@ body{
     }
     .mealData{
         display:grid;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: repeat(4,1fr);
     }
     .meal{
         height:220px;
@@ -618,7 +618,7 @@ body{
     }
     .ingredients ul{
         display:grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: repeat(3,1fr);
         margin-left: -28px;
         margin-top: -5px;
     }
